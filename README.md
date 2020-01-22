@@ -1,15 +1,21 @@
-# gfc-aws-cloudwatch [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.gilt/gfc-aws-cloudwatch_2.12/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.gilt/gfc-aws-cloudwatch_2.12) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# gfc-aws-cloudwatch [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.gfccollective/gfc-aws-cloudwatch_2.12/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/org.gfccollective/gfc-aws-cloudwatch_2.12) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A thin Scala wrapper around AWS CloudWatch Java client. Part of the [Gilt Foundation Classes](https://github.com/gilt?q=gfc).
+A thin Scala wrapper around AWS CloudWatch Java client.
+A fork and new home of the former Gilt Foundation Classes (`org.gfccollective.gfc`), now called the [GFC Collective](https://github.com/gfc-collective), maintained by some of the original authors.
+
 
 ## Getting gfc-aws-cloudwatch
 
-The latest version is 1.3.2, which is cross-built against Scala 2.11.x and 2.12.x
+The latest version is 1.4.0, which is cross-built against Scala 2.12.x and 2.13.x
 
-Add dependency to build.sbt:
+If you're using SBT, add the following line to your build file:
+
 ```scala
-libraryDependencies += "com.gilt" %% "gfc-aws-cloudwatch" % "1.3.2"
+libraryDependencies += "org.gfccollective" %% "gfc-aws-cloudwatch" % "1.4.0"
 ```
+
+For Maven and other build tools, you can visit [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Corg.gfccollective).
+(This search will also list other available libraries from the GFC Collective.)
 
 # Basic usage
 

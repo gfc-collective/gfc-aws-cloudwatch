@@ -2,28 +2,29 @@ import scoverage.ScoverageKeys
 
 name := "gfc-aws-cloudwatch"
 
-organization := "com.gilt"
+organization := "org.gfccollective"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.1"
 
-crossScalaVersions := Seq(scalaVersion.value, "2.11.12")
+crossScalaVersions := Seq(scalaVersion.value, "2.12.10")
 
-val awsLibVersion = "1.11.481"
+val awsLibVersion = "1.11.712"
 
-scalacOptions += "-target:jvm-1.7"
+scalacOptions += "-target:jvm-1.8"
 
-javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
+javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 ScoverageKeys.coverageFailOnMinimum := true
 
 ScoverageKeys.coverageMinimum := 15.0
 
 libraryDependencies ++= Seq(
-  "com.gilt" %% "gfc-logging" % "0.0.8"
-, "com.gilt" %% "gfc-concurrent" % "0.3.8"
-, "com.amazonaws" % "aws-java-sdk-cloudwatch" % awsLibVersion
-, "com.amazonaws" % "aws-java-sdk-logs" % awsLibVersion
-, "org.specs2" %% "specs2-scalacheck" % "4.3.3" % Test
+  "org.scala-lang.modules" %% "scala-java8-compat" % "0.9.0",
+  "org.gfccollective" %% "gfc-logging" % "1.0.0",
+  "org.gfccollective" %% "gfc-concurrent" % "1.0.0",
+  "com.amazonaws" % "aws-java-sdk-cloudwatch" % awsLibVersion,
+  "com.amazonaws" % "aws-java-sdk-logs" % awsLibVersion,
+  "org.specs2" %% "specs2-scalacheck" % "4.8.3" % Test,
 )
 
 releaseCrossBuild := true
@@ -44,13 +45,13 @@ publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
 
-licenses := Seq("Apache-style" -> url("https://raw.githubusercontent.com/gilt/gfc-aws-cloudwatch/master/LICENSE"))
+licenses := Seq("Apache-style" -> url("https://raw.githubusercontent.com/gfc-collective/gfc-aws-cloudwatch/master/LICENSE"))
 
-homepage := Some(url("https://github.com/gilt/gfc-aws-cloudwatch"))
+homepage := Some(url("https://github.com/gfc-collective/gfc-aws-cloudwatch"))
 
 pomExtra := <scm>
-  <url>https://github.com/gilt/gfc-aws-cloudwatch.git</url>
-  <connection>scm:git:git@github.com:gilt/gfc-aws-cloudwatch.git</connection>
+  <url>https://github.com/gfc-collective/gfc-aws-cloudwatch.git</url>
+  <connection>scm:git:git@github.com:gfc-collective/gfc-aws-cloudwatch.git</connection>
 </scm>
 <developers>
   <developer>
@@ -64,4 +65,3 @@ pomExtra := <scm>
     <url>https://github.com/andreyk0</url>
   </developer>
 </developers>
-

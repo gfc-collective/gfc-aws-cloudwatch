@@ -1,11 +1,11 @@
-package com.gilt.gfc.aws.cloudwatch.periodic.metric.aggregator
+package org.gfccollective.aws.cloudwatch.periodic.metric.aggregator
 
 
 import java.util.concurrent.atomic.AtomicReference
 
 import com.amazonaws.services.cloudwatch.model._
-import com.gilt.gfc.aws.cloudwatch.periodic.metric.{CloudWatchMetricDataAggregator, CloudWatchMetricsPublisher}
-import com.gilt.gfc.logging.Loggable
+import org.gfccollective.aws.cloudwatch.periodic.metric.{CloudWatchMetricDataAggregator, CloudWatchMetricsPublisher}
+import org.gfccollective.logging.Loggable
 
 import scala.concurrent.duration.{FiniteDuration, _}
 import scala.language.postfixOps
@@ -28,7 +28,7 @@ case class CloudWatchMetricDataAggregatorBuilder private[metric] (
 ) extends Loggable {
 
   import CloudWatchMetricDataAggregatorBuilder._
-  import com.gilt.gfc.aws.cloudwatch.periodic.metric.aggregator.Stats.{NoData, Zero}
+  import org.gfccollective.aws.cloudwatch.periodic.metric.aggregator.Stats.{NoData, Zero}
 
   /** Name of the aggregated metric. */
   def withPublisher( p: CloudWatchMetricsPublisher

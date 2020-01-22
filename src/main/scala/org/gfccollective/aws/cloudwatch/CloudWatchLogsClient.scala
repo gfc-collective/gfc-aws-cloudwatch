@@ -1,13 +1,14 @@
-package com.gilt.gfc.aws.cloudwatch
+package org.gfccollective.aws.cloudwatch
 
 import com.amazonaws.services.logs.{AWSLogs, AWSLogsClientBuilder}
 import com.amazonaws.services.logs.model._
-import com.gilt.gfc.concurrent.JavaConverters._
-import com.gilt.gfc.concurrent.SameThreadExecutionContext
-import com.gilt.gfc.logging.OpenLoggable
+import org.gfccollective.concurrent.JavaConverters._
+import org.gfccollective.concurrent.SameThreadExecutionContext
+import org.gfccollective.logging.OpenLoggable
 
 import scala.collection.JavaConverters._
 import scala.concurrent.Future
+import scala.util.Success
 import scala.util.control.NonFatal
 
 /** A type class of things that can be converted to CloudWatch log events. */
@@ -124,9 +125,11 @@ trait CloudWatchLogsClient {
 
     implicit val ec = SameThreadExecutionContext // putLogData should be lightweight
 
-    safeFuture onFailure {
-      case NonFatal(e) =>
+    safeFuture.onComplete {
+      case Success(NonFatal(e)) =>
         this.putLogData(logName, t2a(e))
+      case _ =>
+        ()
     }
 
     safeFuture

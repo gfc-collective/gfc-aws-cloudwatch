@@ -1,13 +1,14 @@
-package com.gilt.gfc.aws.cloudwatch
+package org.gfccollective.aws.cloudwatch
 
 import com.amazonaws.services.cloudwatch.{AmazonCloudWatch, AmazonCloudWatchClientBuilder}
 import com.amazonaws.services.cloudwatch.model.{MetricDatum, PutMetricDataRequest}
-import com.gilt.gfc.concurrent.JavaConverters._
-import com.gilt.gfc.concurrent.{ExecutorService, SameThreadExecutionContext}
-import com.gilt.gfc.logging.OpenLoggable
+import org.gfccollective.concurrent.JavaConverters._
+import org.gfccollective.concurrent.{ExecutorService, SameThreadExecutionContext}
+import org.gfccollective.logging.OpenLoggable
 
 import scala.collection.JavaConverters._
 import scala.concurrent.Future
+import scala.util.Success
 import scala.util.control.NonFatal
 
 
@@ -104,9 +105,11 @@ trait CloudWatchMetricsClient {
 
     implicit val ec = SameThreadExecutionContext // putMetricData should be lightweight
 
-    safeFuture onFailure {
-      case NonFatal(e) =>
+    safeFuture.onComplete {
+      case Success(NonFatal(e)) =>
         this.putMetricData(t2a(e))
+      case _ =>
+        ()
     }
 
     safeFuture

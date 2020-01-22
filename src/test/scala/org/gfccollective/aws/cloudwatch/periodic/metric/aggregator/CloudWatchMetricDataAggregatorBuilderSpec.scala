@@ -1,4 +1,4 @@
-package com.gilt.gfc.aws.cloudwatch.periodic.metric.aggregator
+package org.gfccollective.aws.cloudwatch.periodic.metric.aggregator
 
 import org.specs2.mutable.Specification
 
