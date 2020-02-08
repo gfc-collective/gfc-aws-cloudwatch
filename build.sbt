@@ -8,7 +8,7 @@ scalaVersion := "2.13.1"
 
 crossScalaVersions := Seq(scalaVersion.value, "2.12.10")
 
-val awsLibVersion = "2.10.34"
+val awsLibVersion = "2.10.60"
 
 scalacOptions += "-target:jvm-1.8"
 
