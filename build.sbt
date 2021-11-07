@@ -19,7 +19,7 @@ ScoverageKeys.coverageFailOnMinimum := true
 ScoverageKeys.coverageMinimum := 15.0
 
 libraryDependencies ++= Seq(
-  "org.scala-lang.modules" %% "scala-java8-compat" % "1.0.1",
+  "org.scala-lang.modules" %% "scala-java8-compat" % "1.0.2",
   "org.gfccollective" %% "gfc-logging" % "1.0.0",
   "org.gfccollective" %% "gfc-concurrent" % "1.0.0",
   "software.amazon.awssdk" % "cloudwatch" % awsLibVersion,
