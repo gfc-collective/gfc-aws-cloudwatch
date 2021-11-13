@@ -16,7 +16,7 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 ScoverageKeys.coverageFailOnMinimum := true
 
-ScoverageKeys.coverageMinimum := 15.0
+ScoverageKeys.coverageMinimumStmtTotal := 15.0
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-java8-compat" % "1.0.2",
