@@ -27,10 +27,6 @@ libraryDependencies ++= Seq(
   "org.specs2" %% "specs2-scalacheck" % "4.13.1" % Test,
 )
 
-releaseCrossBuild := true
-
-releasePublishArtifactsAction := PgpKeys.publishSigned.value
-
 publishMavenStyle := true
 
 publishTo := {
