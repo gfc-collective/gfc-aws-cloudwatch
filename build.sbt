@@ -4,7 +4,7 @@ name := "gfc-aws-cloudwatch"
 
 organization := "org.gfccollective"
 
-scalaVersion := "2.13.8"
+scalaVersion := "2.13.11"
 
 crossScalaVersions := Seq(scalaVersion.value, "2.12.15")
 
