@@ -24,7 +24,7 @@ libraryDependencies ++= Seq(
   "org.gfccollective" %% "gfc-concurrent" % "1.0.0",
   "software.amazon.awssdk" % "cloudwatch" % awsLibVersion,
   "software.amazon.awssdk" % "cloudwatchlogs" % awsLibVersion,
-  "org.specs2" %% "specs2-scalacheck" % "4.15.0" % Test,
+  "org.specs2" %% "specs2-scalacheck" % "4.20.3" % Test,
 )
 
 publishMavenStyle := true
